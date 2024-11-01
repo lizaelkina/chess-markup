@@ -1,0 +1,21 @@
+.root::-webkit-scrollbar {
+  width: 8px;
+  background: var(--background-element);
+}
+
+.root::-webkit-scrollbar-track {
+  background: var(--background-element);
+}
+
+.root::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--text-color) var(--background-element);
+    scrollbar-width: thin;
+  }
+}
