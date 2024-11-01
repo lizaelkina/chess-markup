@@ -7,11 +7,11 @@
   --background-color: #fff;
   --background-element: #e9ded4;
   --text-color: #313131;
-  --accent-color-primary: #f54932;
+  --text-color-secondary: #fff;
+  --accent-color: #f54932;
   --accent-color-secondary: #3057a2;
   --border-table-color: #d0d0d0;
   --button-color: #1f1f1f;
-  --button-text-color: #fff;
   --button-hover-color: #fbce51;
   --button-disabled-color: #d6d6d6;
   --card-color: #d9d9d9;
