@@ -1,5 +1,5 @@
 .content {
-  flex-grow: 1;
+  height: 100vh;
 }
 
 .content__section {
@@ -15,7 +15,7 @@
   margin-top: 140px;
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
   .content__section {
     margin-top: 120px;
   }
