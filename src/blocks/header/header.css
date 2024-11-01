@@ -1,4 +1,5 @@
 .header {
+  z-index: 1;
   padding-top: 28px;
   padding-bottom: 28px;
 }

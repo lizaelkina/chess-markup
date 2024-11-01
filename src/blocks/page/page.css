@@ -3,6 +3,8 @@
   font-family: var(--font-regular);
   background-color: var(--background-color);
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .page__container {
