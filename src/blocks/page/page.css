@@ -16,7 +16,7 @@
 }
 
 .page__container_type_header {
-  margin-bottom: -64px;
+  margin-bottom: -92px;
 }
 
 @media screen and (max-width: 640px) {
@@ -26,6 +26,6 @@
   }
 
   .page__container_type_header {
-    margin-bottom: -50px;
+    margin-bottom: -68px;
   }
 }
