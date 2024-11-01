@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--background-element);
+}
+
+.footer__container {
+  padding-top: 40px;
+  padding-bottom: 72px;
+}
+
+.footer__text {
+  font-family: var(--font-regular);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--text-color);
+  opacity: 60%;
+}
+
+@media (max-width: 480px) {
+  .footer__container {
+    padding-bottom: 60px;
+  }
+}
