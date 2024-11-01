@@ -1,0 +1,31 @@
+.content {
+  flex-grow: 1;
+}
+
+.content__section {
+  margin-top: 200px;
+}
+
+.content__section_running-line_up {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.content__section_running-line_down {
+  margin-top: 140px;
+}
+
+@media screen and (max-width: 640px) {
+  .content__section {
+    margin-top: 120px;
+  }
+
+  .content__section_running-line_up {
+    margin-top: 0;
+    margin-bottom: 48px;
+  }
+
+  .content__section_running-line_down {
+    margin-top: 100px;
+  }
+}
