@@ -1,19 +1,19 @@
 .content {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .content__section {
   margin-top: 200px;
 }
 
-.content__section_running-line_up {
-  margin-top: 0;
+.content__running-line-up {
   margin-bottom: 80px;
 }
 
-.content__section_running-line_down {
+.content__running-line-down {
   margin-top: 140px;
 }
 
@@ -22,12 +22,11 @@
     margin-top: 120px;
   }
 
-  .content__section_running-line_up {
-    margin-top: 0;
+  .content__running-line-up {
     margin-bottom: 48px;
   }
 
-  .content__section_running-line_down {
+  .content__running-line-down {
     margin-top: 100px;
   }
 }
