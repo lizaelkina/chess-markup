@@ -24,7 +24,9 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+}
 
+@media (max-width: 480px) {
   .page__container_type_header {
     margin-bottom: -68px;
   }
