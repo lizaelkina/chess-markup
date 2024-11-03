@@ -8,12 +8,12 @@
   margin-top: 200px;
 }
 
-.content__running-line-up {
-  margin-bottom: 80px;
+.content__section_first {
+  margin-top: 80px;
 }
 
-.content__running-line-down {
-  margin-top: 140px;
+.content__section_last {
+  margin-bottom: 140px;
 }
 
 @media (max-width: 640px) {
@@ -21,11 +21,11 @@
     margin-top: 120px;
   }
 
-  .content__running-line-up {
-    margin-bottom: 48px;
+  .content__section_first {
+    margin-top: 48px;
   }
 
-  .content__running-line-down {
-    margin-top: 100px;
+  .content__section_last {
+    margin-bottom: 100px;
   }
 }
