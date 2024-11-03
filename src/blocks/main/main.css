@@ -1,0 +1,31 @@
+.main {
+  min-height: 700px;
+  padding-top: 124px;
+  background-image:
+      image-set(url('../../images/main/contour.webp') type('image/webp'),
+                url('../../images/main/contour.png') type('image/png')),
+      image-set(url('../../images/main/banner.webp') type('image/webp'),
+                url('../../images/main/banner.png') type('image/png')),
+      image-set(url('../../images/background/background-image.webp') type('image/webp'),
+                url('../../images/background/background-image.jpg') type('image/jpg'));
+  background-size: 1613px 700px, 1613px 700px, cover;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: center;
+  background-color: var(--background-element);
+  background-blend-mode: normal, multiply, color-burn;
+}
+
+@media (max-width: 480px) {
+  .main {
+    min-height: 774px;
+    background-image:
+        image-set(url('../../images/main/contour-mobile.webp') type('image/webp'),
+        url('../../images/main/contour-mobile.png') type('image/png')),
+        image-set(url('../../images/main/banner-mobile.webp') type('image/webp'),
+        url('../../images/main/banner-mobile.png') type('image/png')),
+        image-set(url('../../images/background/background-image-mobile.webp') type('image/webp'),
+        url('../../images/background/background-image-mobile.jpg') type('image/jpg'));
+    background-size: contain;
+    background-position: bottom, bottom center;
+  }
+}
