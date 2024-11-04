@@ -27,7 +27,7 @@
   font-family: var(--font-title);
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(36px, 4.2vw, 60px);
   line-height: 110%;
   color: var(--text-color);
   text-transform: uppercase;
@@ -60,15 +60,13 @@
   gap: 16px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1260px) {
   .main__content {
-    max-width: 335px;
+    max-width: clamp(335px, 47%, 542px);
   }
+}
 
-  .main__subtitle {
-    text-align: start;
-  }
-
+@media (max-width: 1100px) {
   .main__buttons {
     margin-top: 8px;
     flex-direction: column;
@@ -93,5 +91,14 @@
   .main__content {
     padding-top: 90px;
     padding-bottom: 291px;
+    max-width: fit-content;
+  }
+
+  .main__title {
+    max-width: 335px;
+  }
+
+  .main__subtitle {
+    text-align: start;
   }
 }
