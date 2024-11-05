@@ -16,7 +16,7 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, './dist'),
-    watchFiles: path.join(__dirname, 'src'),
+    watchFiles: path.resolve(__dirname, 'src'),
     compress: true,
     port: 8080,
     open: true
