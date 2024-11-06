@@ -1,0 +1,83 @@
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table__row {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: center;
+  font-family: var(--font-regular);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-table-color);
+}
+
+.table__row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.table__title {
+  text-align: start;
+  font-weight: normal;
+  padding: 16px 16px 16px 0;
+  border-right: 2px solid var(--border-table-color);
+  color: var(--border-table-title);
+}
+
+.table__text {
+  padding: 16px 0 16px 16px;
+  font-family: var(--font-bold);
+}
+
+.table__row:first-child .table__title,
+.table__row:first-child .table__text {
+  padding-top: 0;
+}
+
+.table__row:last-child .table__title,
+.table__row:last-child .table__text {
+  padding-bottom: 0;
+}
+
+.table__sale {
+  display: flex;
+  gap: 12px;
+}
+
+.table__sale-price {
+  text-decoration-color: var(--accent-color);
+}
+
+@media (max-width: 700px) {
+  .table__row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px
+  }
+
+  .table__row_exception {
+    flex-direction: row;
+  }
+
+  .table__row_exception .table__title,
+  .table__row_exception .table__text {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .table__title {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .table__text {
+    padding: 0 0 16px 0;
+  }
+}
