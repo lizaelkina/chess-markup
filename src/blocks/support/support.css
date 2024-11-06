@@ -128,6 +128,7 @@
   }
 
   .support__other {
+    align-self: start;
     margin-top: 0;
   }
 }
