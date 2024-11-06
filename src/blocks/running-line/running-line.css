@@ -37,8 +37,10 @@
   background-color: var(--text-color-secondary);
 }
 
-.running-line:hover .running-line__container {
-  animation-play-state: paused;
+@media (any-hover: hover) {
+  .running-line:hover .running-line__container {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes running-line {
