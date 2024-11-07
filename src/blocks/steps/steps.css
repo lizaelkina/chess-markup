@@ -44,6 +44,10 @@
   right: -50px;
 }
 
+.steps__controls {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .steps__subtitle {
     margin-left: 0;
@@ -62,6 +66,15 @@
 @media (max-width: 700px) {
   .steps {
     gap: 10px;
+  }
+
+  .steps__container {
+    gap: 28px
+  }
+
+  .steps__controls {
+    display: flex;
+    align-self: center;
   }
 
   .steps__picture {
