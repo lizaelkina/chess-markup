@@ -33,6 +33,7 @@
 
 .support__title-accent {
   font-family: var(--font-title-accent);
+  font-weight: 700;
   color: var(--accent-color);
 }
 

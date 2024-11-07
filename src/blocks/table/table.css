@@ -32,6 +32,7 @@
 .table__text {
   padding: 16px 0 16px 16px;
   font-family: var(--font-bold);
+  font-weight: 600;
 }
 
 .table__row:first-child .table__title,
