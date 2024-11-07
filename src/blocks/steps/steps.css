@@ -1,4 +1,5 @@
 .steps {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 54px;
@@ -30,11 +31,37 @@
   text-transform: none;
 }
 
-@media (max-width: 909px) {
+.steps__image {
+  max-width: 377px;
+  aspect-ratio: 377 / 235;
+  position: absolute;
+  bottom: 55px;
+  right: 20px;
+}
+
+@media (max-width: 1100px) {
   .steps__subtitle {
     margin-left: 0;
     margin-top: 12px;
     display: block;
     max-width: fit-content;
+  }
+
+  .steps__image {
+    bottom: 28px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 700px) {
+  .steps {
+    gap: 148px;
+  }
+
+  .steps__image {
+    max-width: 335px;
+    bottom: 375px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

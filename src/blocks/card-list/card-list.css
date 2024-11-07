@@ -1,8 +1,4 @@
 .card-list {
-  position: relative;
-}
-
-.card-list__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -11,7 +7,7 @@
 }
 
 .card-list__item {
-  padding: 20px 20px 20px 72px;
+  padding: 20px 40px 20px 72px;
   background-image:
       image-set(url('../../images/background/background-image.webp') type('image/webp'),
                 url('../../images/background/background-image.jpg') type('image/jpg')),
@@ -58,6 +54,7 @@
 .card-list__item:nth-child(7) {
   grid-column: span 2;
   grid-row: 3;
+  padding-right: 320px;
   background-color: var(--background-element);
 }
 
@@ -76,14 +73,6 @@
   align-items: center;
 }
 
-.card-list__item:nth-of-type(5) {
-  padding-right: 25px;
-}
-
-.card-list__item:last-of-type {
-  padding-right: 286px;
-}
-
 .card-list__text {
   font-family: var(--font-medium);
   font-style: normal;
@@ -93,10 +82,61 @@
   color: var(--text-color);
 }
 
-.card-list__image {
-  position: absolute;
-  bottom: -15px;
-  right: -60px;
-  max-width: 377px;
-  aspect-ratio: 401 / 235;
+@media (max-width: 1100px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .card-list__item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .card-list__item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .card-list__item:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .card-list__item:nth-child(6) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .card-list__item:nth-child(7) {
+    grid-column: span 2;
+    grid-row: 4;
+    padding-right: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* временно, пока нет слайдера */
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .card-list__item:nth-child(1) {
+    min-height: 150px;
+    padding-top: 62px;
+    padding-right: 20px;
+  }
+
+  .card-list__item:nth-child(1)::before {
+    top: 62px;
+  }
+
+  .card-list__item:nth-child(2) {
+    min-height: 150px;
+    padding-right: 20px;
+  }
 }
