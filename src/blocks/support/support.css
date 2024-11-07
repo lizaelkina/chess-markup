@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: minmax(400px, 764px) minmax(200px, 394px);
   align-items: center;
-  column-gap: clamp(32px, 4.7vw, 64px);
+  column-gap: 64px;
 }
 
 .support__container-bottom {
@@ -74,6 +74,10 @@
 }
 
 @media (max-width: 1200px) {
+  .support__container-top {
+    column-gap: 30px;
+  }
+
   .support__container-bottom {
     align-items: center;
     grid-template-areas:
