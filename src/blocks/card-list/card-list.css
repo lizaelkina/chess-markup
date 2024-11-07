@@ -1,0 +1,101 @@
+.card-list {
+  position: relative;
+}
+
+.card-list__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  counter-reset: card-list__item;
+}
+
+.card-list__item {
+  padding: 20px 20px 20px 72px;
+  background-image:
+      image-set(url('../../images/background/background-image.webp') type('image/webp'),
+                url('../../images/background/background-image.jpg') type('image/jpg')),
+      image-set(url('../../images/steps/card-background.webp') type('image/webp'),
+                url('../../images/steps/card-background.jpg') type('image/jpg'));
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-blend-mode: color-burn;
+  position: relative;
+}
+
+.card-list__item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.card-list__item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.card-list__item:nth-child(3) {
+  grid-column: 3;
+  grid-row: span 2;
+}
+
+.card-list__item:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.card-list__item:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.card-list__item:nth-child(6) {
+  grid-column: 1;
+  grid-row: 3;
+  background-color: var(--background-element);
+}
+
+.card-list__item:nth-child(7) {
+  grid-column: span 2;
+  grid-row: 3;
+  background-color: var(--background-element);
+}
+
+.card-list__item::before {
+  content: counter(card-list__item);
+  counter-increment: card-list__item;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  background-color: var(--text-color-secondary);
+  padding-top: 6px;
+  text-align: center;
+}
+
+.card-list__item:nth-of-type(5) {
+  padding-right: 25px;
+}
+
+.card-list__item:last-of-type {
+  padding-right: 286px;
+}
+
+.card-list__text {
+  font-family: var(--font-medium);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(18px, 1.5vw, 20px);
+  line-height: 120%;
+  color: var(--text-color);
+}
+
+.card-list__image {
+  position: absolute;
+  bottom: -15px;
+  right: -60px;
+  max-width: 377px;
+  aspect-ratio: 401 / 235;
+}
