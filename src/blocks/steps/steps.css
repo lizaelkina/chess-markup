@@ -1,8 +1,13 @@
 .steps {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 54px;
+}
+
+.steps__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .steps__title {
@@ -35,8 +40,8 @@
   max-width: 377px;
   aspect-ratio: 377 / 235;
   position: absolute;
-  bottom: 55px;
-  right: 20px;
+  bottom: 0;
+  right: -50px;
 }
 
 @media (max-width: 1100px) {
@@ -48,20 +53,26 @@
   }
 
   .steps__image {
-    bottom: 28px;
-    right: 5px;
+    max-width: 335px;
+    bottom: -5px;
+    right: -5px;
   }
 }
 
 @media (max-width: 700px) {
   .steps {
-    gap: 148px;
+    gap: 10px;
+  }
+
+  .steps__picture {
+    order: -1;
+    align-self: center;
+    margin-bottom: -100px;
+    z-index: 1;
   }
 
   .steps__image {
+    position: static;
     max-width: 335px;
-    bottom: 375px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }

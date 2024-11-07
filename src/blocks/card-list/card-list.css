@@ -111,7 +111,6 @@
   .card-list__item:nth-child(7) {
     grid-column: span 2;
     grid-row: 4;
-    padding-right: 350px;
   }
 }
 
