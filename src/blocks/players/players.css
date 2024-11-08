@@ -1,0 +1,54 @@
+.players {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'title controls'
+    'list list';
+  row-gap: 60px;
+}
+
+.players__title {
+  grid-area: title;
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(36px, 4.2vw, 54px);
+  line-height: clamp(110%, 4.2vw, 120%);
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.players__controls {
+  grid-area: controls;
+  justify-self: end;
+}
+
+.players__list {
+  grid-area: list;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .players {
+    grid-template-areas:
+    'title'
+    'list'
+    'controls';
+    row-gap: 40px;
+  }
+
+  .players__controls {
+    justify-self: center;
+  }
+
+  /* временно, пока нет слайдера */
+  .players__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 386px;
+    overflow: hidden;
+  }
+}

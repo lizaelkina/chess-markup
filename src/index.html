@@ -162,24 +162,94 @@
     </section>
 
     <section class="players page__container content__section content__section_last">
-      <div class="controls" role="group" aria-label="Управление слайдами карточек участников">
+      <h3 class="players__title">Участники турнира</h3>
+      <div class="controls players__controls" role="group" aria-label="Управление слайдами карточек участников">
         <button class="controls__button controls__button_icon controls__button_icon_prev" aria-label="Предыдущий" type="button"></button>
         <span class="controls__text controls__text_left controls__text_active">3</span>
         <span class="controls__text">/</span>
         <span class="controls__text controls__text_right">6</span>
         <button class="controls__button controls__button_icon controls__button_icon_next" aria-label="Следующий" type="button"></button>
       </div>
-      <article class="card-player">
-        <picture>
-          <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">
-          <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"
-               alt="Портрет участника турнира"
-               loading="lazy">
-        </picture>
-          <h4 class="card-player__name">Хозе-Рауль Капабланка</h4>
-          <p class="card-player__description">Чемпион мира по шахматам</p>
-          <a href="#" class="button button_tertiary card-player__button">Подробнее</a>
-      </article>
+      <ul class="players__list">
+        <li class="players__item">
+          <article class="card-player">
+            <picture>
+              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">
+              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"
+                   alt="Портрет участника турнира"
+                   loading="lazy">
+            </picture>
+            <h4 class="card-player__name">Хозе-Рауль Капабланка</h4>
+            <p class="card-player__description">Чемпион мира по шахматам</p>
+            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>
+          </article>
+        </li>
+        <li class="players__item">
+          <article class="card-player">
+            <picture>
+              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">
+              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"
+                   alt="Портрет участника турнира"
+                   loading="lazy">
+            </picture>
+            <h4 class="card-player__name">Эммануил Ласкер</h4>
+            <p class="card-player__description">Чемпион мира по шахматам</p>
+            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>
+          </article>
+        </li>
+        <li class="players__item">
+          <article class="card-player">
+            <picture>
+              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">
+              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"
+                   alt="Портрет участника турнира"
+                   loading="lazy">
+            </picture>
+            <h4 class="card-player__name">Александр Алехин</h4>
+            <p class="card-player__description">Чемпион мира по шахматам</p>
+            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>
+          </article>
+        </li>
+<!--        <li class="players__item">-->
+<!--          <article class="card-player">-->
+<!--            <picture>-->
+<!--              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">-->
+<!--              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"-->
+<!--                   alt="Портрет участника турнира"-->
+<!--                   loading="lazy">-->
+<!--            </picture>-->
+<!--            <h4 class="card-player__name">Арон Нимцович</h4>-->
+<!--            <p class="card-player__description">Чемпион мира по шахматам</p>-->
+<!--            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>-->
+<!--          </article>-->
+<!--        </li>-->
+<!--        <li class="players__item">-->
+<!--          <article class="card-player">-->
+<!--            <picture>-->
+<!--              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">-->
+<!--              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"-->
+<!--                   alt="Портрет участника турнира"-->
+<!--                   loading="lazy">-->
+<!--            </picture>-->
+<!--            <h4 class="card-player__name">Рихард Рети</h4>-->
+<!--            <p class="card-player__description">Чемпион мира по шахматам</p>-->
+<!--            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>-->
+<!--          </article>-->
+<!--        </li>-->
+<!--        <li class="players__item">-->
+<!--          <article class="card-player">-->
+<!--            <picture>-->
+<!--              <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">-->
+<!--              <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"-->
+<!--                   alt="Портрет участника турнира"-->
+<!--                   loading="lazy">-->
+<!--            </picture>-->
+<!--            <h4 class="card-player__name">Остап Бендер</h4>-->
+<!--            <p class="card-player__description">Гроссмейстер</p>-->
+<!--            <a href="#" class="button button_tertiary card-player__button">Подробнее</a>-->
+<!--          </article>-->
+<!--        </li>-->
+      </ul>
     </section>
   </main>
 
