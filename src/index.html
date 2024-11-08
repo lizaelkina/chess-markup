@@ -169,6 +169,17 @@
         <span class="controls__text controls__text_right">6</span>
         <button class="controls__button controls__button_icon controls__button_icon_next" aria-label="Следующий" type="button"></button>
       </div>
+      <article class="card-player">
+        <picture>
+          <source srcset="<%=require('./images/players/avatar.webp')%>" type="image/webp">
+          <img class="card-player__image" src="<%=require('./images/players/avatar.jpg')%>"
+               alt="Портрет участника турнира"
+               loading="lazy">
+        </picture>
+          <h4 class="card-player__name">Хозе-Рауль Капабланка</h4>
+          <p class="card-player__description">Чемпион мира по шахматам</p>
+          <a href="#" class="button button_tertiary card-player__button">Подробнее</a>
+      </article>
     </section>
   </main>
 

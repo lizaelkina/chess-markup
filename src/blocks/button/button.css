@@ -45,6 +45,21 @@
   }
 }
 
+.button_tertiary {
+  padding: 7px;
+  border-radius: 62px;
+  border: 1px solid var(--accent-color-secondary);
+  line-height: 120%;
+  color: var(--accent-color-secondary);
+}
+
+@media (any-hover: hover) {
+  .button_tertiary:hover {
+    background-color: var(--accent-color-secondary);
+    color: var(--text-color-secondary);
+  }
+}
+
 @media (max-width: 1100px) {
   .button {
     flex-direction: row;

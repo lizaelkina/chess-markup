@@ -7,6 +7,7 @@
 @import url(../blocks/button/button.css);
 @import url(../blocks/controls/controls.css);
 @import url(../blocks/card-list/card-list.css);
+@import url(../blocks/card-player/card-player.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/content/content.css);
 @import url(../blocks/footer/footer.css);
@@ -15,3 +16,4 @@
 @import url(../blocks/support/support.css);
 @import url(../blocks/table/table.css);
 @import url(../blocks/steps/steps.css);
+@import url(../blocks/players/players.css);

@@ -1,0 +1,37 @@
+.card-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-player__image {
+  max-width: 320px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.card-player__name {
+  margin-top: 22px;
+  font-family: var(--font-bold);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--text-color);
+}
+
+.card-player__description {
+  margin-bottom: 14px;
+  font-family: var(--font-regular);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--text-color);
+  opacity: 60%;
+}
+
+.card-player__button {
+  max-width: 113px;
+}
