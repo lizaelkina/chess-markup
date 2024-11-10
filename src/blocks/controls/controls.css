@@ -65,16 +65,16 @@
   opacity: 60%;
 }
 
-.controls__text_left {
+.controls__text_active {
+  opacity: 100%;
+}
+
+.controls__counter_left {
   padding-left: 4px;
 }
 
-.controls__text_right {
+.controls__counter_right {
   padding-right: 4px;
-}
-
-.controls__text_active {
-  opacity: 100%;
 }
 
 @media (max-width: 700px) {

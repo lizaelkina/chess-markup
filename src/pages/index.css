@@ -5,6 +5,7 @@
 @import url(../blocks/root/root.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/button/button.css);
+@import url(../blocks/slider/slider.css);
 @import url(../blocks/controls/controls.css);
 @import url(../blocks/card-list/card-list.css);
 @import url(../blocks/card-player/card-player.css);

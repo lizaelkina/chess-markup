@@ -1,0 +1,29 @@
+.slider {
+  overflow: hidden;
+}
+
+.slider__content {
+  display: flex;
+  transform: translateX(0);
+  transition: transform .5s ease-in-out;
+}
+
+.slide {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.slide__active .card-player__image {
+  border: 2px solid var(--accent-color);
+}
+
+@media (max-width: 700px) {
+  .slide {
+    padding: 0;
+  }
+
+  .slide__active .card-player__image {
+    border: none;
+  }
+}

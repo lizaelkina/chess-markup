@@ -1,6 +1,6 @@
 .card-player {
-  padding-left: 37px;
-  padding-right: 37px;
+  padding-left: 36px;
+  padding-right: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,8 @@
   max-width: 320px;
   aspect-ratio: 1;
   border-radius: 50%;
+  border: 2px solid transparent;
+  background-color: var(--background-element);
 }
 
 .card-player__name {
