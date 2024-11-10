@@ -4,6 +4,15 @@
   padding-bottom: 28px;
 }
 
+.header__link-logo {
+  display: block;
+  width: fit-content;
+}
+
+.header__link-logo:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
 .header__logo {
   width: 245px;
   height: 36px;

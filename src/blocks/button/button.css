@@ -17,6 +17,10 @@
   transition: all .5s ease-in;
 }
 
+.button:focus-visible {
+   outline: 2px solid var(--accent-color);
+ }
+
 .button_primary {
   border-color: var(--button-color);
   background-color: var(--button-color);

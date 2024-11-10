@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+.controls__button:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
 .controls__button_active {
   background-color: var(--text-color);
 }
@@ -30,7 +34,7 @@
   background-repeat: no-repeat;
 }
 
-.controls__button_icon:disabled {
+.controls__button_icon[aria-disabled='true'] {
   background-color: var(--button-disabled-color);
   pointer-events: none;
 }
