@@ -12,7 +12,7 @@
 <body class="root">
 <div class="page">
   <header class="header page__container page__container_type_header">
-    <a href="./">
+    <a class="header__link-logo" href="./">
       <img class="header__logo" src="<%=require('./images/svg/logo.svg')%>" alt="Логотип шахматного клуба">
     </a>
   </header>
@@ -150,13 +150,20 @@
                loading="lazy">
         </picture>
         <div class="controls controls_pagination steps__controls" role="group" aria-label="Управление слайдами карточек этапов">
-          <button class="controls__button controls__button_icon controls__button_icon_prev" aria-label="Предыдущий" type="button" disabled></button>
-          <button class="controls__button controls__button_active" type="button" aria-label="Показать 1 из 5"></button>
-          <button class="controls__button" type="button" aria-label="Показать 2 из 5"></button>
-          <button class="controls__button" type="button" aria-label="Показать 3 из 5"></button>
-          <button class="controls__button" type="button" aria-label="Показать 4 из 5"></button>
-          <button class="controls__button" type="button" aria-label="Показать 5 из 5"></button>
-          <button class="controls__button controls__button_icon controls__button_icon_next" aria-label="Следующий" type="button"></button>
+          <button class="controls__button controls__button_icon controls__button_icon_prev"
+                  type="button"
+                  aria-label="Предыдущий"
+                  aria-disabled="true">
+          </button>
+          <button class="controls__button controls__button_active" type="button" aria-label="Показать 1 из 5" aria-current="true"></button>
+          <button class="controls__button controls__button_radio" type="button" aria-label="Показать 2 из 5"></button>
+          <button class="controls__button controls__button_radio" type="button" aria-label="Показать 3 из 5"></button>
+          <button class="controls__button controls__button_radio" type="button" aria-label="Показать 4 из 5"></button>
+          <button class="controls__button controls__button_radio" type="button" aria-label="Показать 5 из 5"></button>
+          <button class="controls__button controls__button_icon controls__button_icon_next"
+                  type="button"
+                  aria-label="Следующий">
+          </button>
         </div>
       </div>
     </section>
@@ -164,11 +171,17 @@
     <section class="players page__container content__section content__section_last">
       <h3 class="players__title">Участники турнира</h3>
       <div class="controls players__controls" role="group" aria-label="Управление слайдами карточек участников">
-        <button class="controls__button controls__button_icon controls__button_icon_prev" aria-label="Предыдущий" type="button"></button>
+        <button class="controls__button controls__button_icon controls__button_icon_prev"
+                type="button"
+                aria-label="Предыдущий">
+        </button>
         <span class="controls__text controls__text_left controls__text_active">3</span>
         <span class="controls__text">/</span>
         <span class="controls__text controls__text_right">6</span>
-        <button class="controls__button controls__button_icon controls__button_icon_next" aria-label="Следующий" type="button"></button>
+        <button class="controls__button controls__button_icon controls__button_icon_next"
+                type="button"
+                aria-label="Следующий">
+        </button>
       </div>
       <ul class="players__list">
         <li class="players__item">
