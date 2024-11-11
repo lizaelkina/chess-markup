@@ -2,8 +2,8 @@
   display: grid;
   align-items: center;
   grid-template-areas:
-    'title controls'
-    'list list';
+    'title title controls'
+    'list list list';
   row-gap: 60px;
 }
 
@@ -27,7 +27,7 @@
   grid-area: list;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 744px) {
   .players {
     grid-template-areas:
     'title'

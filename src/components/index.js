@@ -10,26 +10,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextButton = controls.querySelector('.controls__button_icon_next');
   const controlCounterLeft = controls.querySelector('.controls__counter_left');
 
-  const SWITCH_OFF_BREAKPOINT= 700;
+  const BREAKPOINT_FOR_3 = 1190;
+  const BREAKPOINT_FOR_2 = 744;
 
   const activeSlidesClass = 'slide__active';
   const slideCount = slides.length;
-  let isShowOneSlide, currentSlide, sliderWidth, slideWidth, translateX;
+  let slidesPerView, currentSlide, sliderWidth, slideWidth, translateX;
 
   function initSlider() {
-    isShowOneSlide = document.documentElement.clientWidth > SWITCH_OFF_BREAKPOINT;
     currentSlide = 0;
     translateX = 0;
     sliderWidth = slider.offsetWidth;
-    if (isShowOneSlide) {
-      slideWidth = sliderWidth / 3;
-    } else {
-      slideWidth = sliderWidth;
 
+    if (document.documentElement.clientWidth > BREAKPOINT_FOR_3) {
+      slidesPerView = 3;
+    } else if (document.documentElement.clientWidth > BREAKPOINT_FOR_2) {
+      slidesPerView = 2;
+    } else {
+      slidesPerView = 1;
     }
+
+    slideWidth = sliderWidth / slidesPerView;
+
     slides.forEach((slide) => {
-      slide.style.setProperty('min-width', slideWidth + 'px');
-    })
+      slide.style.setProperty('min-width', `${slideWidth}px`);
+    });
+
     updateSlider();
   }
 
@@ -68,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     } else {
       currentSlide = slideCount - 1;
-      translateX = -slideWidth * (slideCount - 3)
+      translateX = -slideWidth * (slideCount - slidesPerView);
     }
     updateSlider();
   }
