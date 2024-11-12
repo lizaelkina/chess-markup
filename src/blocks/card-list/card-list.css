@@ -117,25 +117,35 @@
 @media (max-width: 700px) {
   /* временно, пока нет слайдера */
   .card-list {
+    max-height: 300px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-height: 300px;
-    overflow: hidden;
   }
 
-  .card-list__item:nth-child(1) {
+  .card-list__item {
     min-height: 150px;
-    padding-top: 62px;
-    padding-right: 20px;
+    padding: 62px 24px 0 72px;
   }
 
-  .card-list__item:nth-child(1)::before {
+  .card-list__item::before {
     top: 62px;
   }
 
-  .card-list__item:nth-child(2) {
-    min-height: 150px;
-    padding-right: 20px;
+  .card-list__item:nth-child(2),
+  .card-list__item:nth-child(5) {
+    padding-top: 28px;
+  }
+
+  .card-list__item:nth-child(2)::before,
+  .card-list__item:nth-child(5)::before {
+    top: 28px;
+  }
+
+  .card-list__item:nth-child(3),
+  .card-list__item:nth-child(6),
+  .card-list__item:nth-child(7) {
+    min-height: 300px;
   }
 }
