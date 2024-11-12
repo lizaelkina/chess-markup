@@ -13,7 +13,6 @@
   padding-right: 10px;
 }
 
-
 .slide__active .card-player__image {
   border: 2px solid var(--accent-color);
 }

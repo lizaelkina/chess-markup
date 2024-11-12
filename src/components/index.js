@@ -1,19 +1,18 @@
 import '../pages/index.css';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const players = document.querySelector('.players')
-  const slider = players.querySelector('.slider');
-  const sliderContent = slider.querySelector('.slider__content');
-  const controls = players.querySelector('.controls');
-  const slides = slider.querySelectorAll('.slide');
-  const prevButton = controls.querySelector('.controls__button_icon_prev');
-  const nextButton = controls.querySelector('.controls__button_icon_next');
-  const controlCounterLeft = controls.querySelector('.controls__counter_left');
+import {
+  controlCounterLeft,
+  nextButton,
+  prevButton,
+  slider,
+  sliderContent,
+  slides,
+  activeSlidesClass} from './utils';
 
+document.addEventListener('DOMContentLoaded', function () {
   const BREAKPOINT_FOR_3 = 1190;
   const BREAKPOINT_FOR_2 = 744;
 
-  const activeSlidesClass = 'slide__active';
   const slideCount = slides.length;
   let slidesPerView, currentSlide, sliderWidth, slideWidth, translateX;
 
