@@ -25,6 +25,11 @@
   background-color: var(--text-color);
 }
 
+.controls__button_radio[aria-current='true'] {
+  background-color: var(--text-color);
+  pointer-events: none;
+}
+
 .controls__button_icon {
   width: 44px;
   height: 44px;
