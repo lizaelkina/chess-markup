@@ -117,32 +117,50 @@
         Этапы преображения Васюков
         <span class="steps__subtitle">Будущие источники обогащения васюкинцев</span>
       </h3>
-      <div class="steps__container">
-        <ol class="card-list">
-          <li class="card-list__item card-list__text">
-            Строительство железнодорожной магистрали Москва-Васюки
-          </li>
-          <li class="card-list__item card-list__text">
-            Открытие фешенебельной гостиницы «Проходная пешка» и&nbsp;других небоскрёбов
-          </li>
-          <li class="card-list__item card-list__text">
-            Поднятие сельского хозяйства в&nbsp;радиусе на&nbsp;тысячу километров: производство овощей, фруктов, икры,
-            шоколадных конфет
-          </li>
-          <li class="card-list__item card-list__text">
-            Строительство дворца для&nbsp;турнира
-          </li>
-          <li class="card-list__item card-list__text">
-            Размещение гаражей для&nbsp;гостевого автотранспорта
-          </li>
-          <li class="card-list__item card-list__text">
-            Постройка сверхмощной радиостанции для&nbsp;передачи всему миру сенсационных результатов
-          </li>
-          <li class="card-list__item card-list__text">
-            Создание аэропорта «Большие Васюки» с&nbsp;регулярным отправлением почтовых самолётов и&nbsp;дирижаблей во&nbsp;все&nbsp;концы
-            света, включая Лос-Анжелос и&nbsp;Мельбурн
-          </li>
-        </ol>
+      <div class="steps__container slider steps__slider">
+        <div class="card-list slider__content" role="list">
+          <div class="card-list__wrap slide" role="group">
+            <div class="card-list__item" role="listitem">
+              <p class="card-list__text">
+                Строительство железнодорожной магистрали Москва-Васюки
+              </p>
+            </div>
+            <div class="card-list__item" role="listitem">
+              <p class="card-list__text">
+                Открытие фешенебельной гостиницы «Проходная пешка» и&nbsp;других небоскрёбов
+              </p>
+            </div>
+          </div>
+          <div class="card-list__item slide" role="listitem">
+            <p class="card-list__text">
+              Поднятие сельского хозяйства в&nbsp;радиусе на&nbsp;тысячу километров: производство овощей, фруктов, икры,
+              шоколадных конфет
+            </p>
+          </div>
+          <div class="card-list__wrap slide" role="group">
+            <div class="card-list__item" role="listitem">
+              <p class="card-list__text">
+                Строительство дворца для&nbsp;турнира
+              </p>
+            </div>
+            <div class="card-list__item" role="listitem">
+              <p class="card-list__text">
+                Размещение гаражей для&nbsp;гостевого автотранспорта
+              </p>
+            </div>
+          </div>
+          <div class="card-list__item slide" role="listitem">
+            <p class="card-list__text">
+              Постройка сверхмощной радиостанции для&nbsp;передачи всему миру сенсационных результатов
+            </p>
+          </div>
+          <div class="card-list__item slide" role="listitem">
+            <p class="card-list__text">
+              Создание аэропорта «Большие Васюки» с&nbsp;регулярным отправлением почтовых самолётов и&nbsp;дирижаблей во&nbsp;все&nbsp;концы
+              света, включая Лос-Анжелос и&nbsp;Мельбурн
+            </p>
+          </div>
+        </div>
         <picture class="steps__picture">
           <source srcset="<%=require('./images/steps/aeroplane.webp')%>" type="image/webp">
           <img class="steps__image" src="<%=require('./images/steps/aeroplane.png')%>"
@@ -154,11 +172,9 @@
              aria-label="Управление слайдами карточек этапов">
           <button class="controls__button controls__button_icon controls__button_icon_prev"
                   type="button"
-                  aria-label="Предыдущий"
-                  aria-disabled="true">
+                  aria-label="Предыдущий">
           </button>
-          <button class="controls__button controls__button_active" type="button" aria-label="Показать 1 из 5"
-                  aria-current="true"></button>
+          <button class="controls__button controls__button_radio" type="button" aria-label="Показать 1 из 5"></button>
           <button class="controls__button controls__button_radio" type="button" aria-label="Показать 2 из 5"></button>
           <button class="controls__button controls__button_radio" type="button" aria-label="Показать 3 из 5"></button>
           <button class="controls__button controls__button_radio" type="button" aria-label="Показать 4 из 5"></button>
@@ -186,7 +202,7 @@
                 aria-label="Следующий">
         </button>
       </div>
-      <div class="players__list slider">
+      <div class="players__list slider players__slider">
         <ul class="slider__content">
           <li class="players__item slide">
             <article class="card-player">
