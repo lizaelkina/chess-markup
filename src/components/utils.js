@@ -1,9 +1,0 @@
-export const players = document.querySelector('.players');
-export const slider = players.querySelector('.slider');
-export const sliderContent = slider.querySelector('.slider__content');
-export const slides = slider.querySelectorAll('.slide');
-export const controls = players.querySelector('.controls');
-export const prevButton = controls.querySelector('.controls__button_icon_prev');
-export const nextButton = controls.querySelector('.controls__button_icon_next');
-export const controlCounterLeft = controls.querySelector('.controls__counter_left');
-export const activeSlidesClass = 'slide__active';

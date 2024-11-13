@@ -1,95 +1,57 @@
 import '../pages/index.css';
-
-import {
-  controlCounterLeft,
-  nextButton,
-  prevButton,
-  slider,
-  sliderContent,
-  slides,
-  activeSlidesClass} from './utils';
+import {createSlider} from './slider';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const BREAKPOINT_FOR_3 = 1190;
-  const BREAKPOINT_FOR_2 = 744;
 
-  const slideCount = slides.length;
-  let slidesPerView, currentSlide, sliderWidth, slideWidth, translateX;
-
-  function initSlider() {
-    currentSlide = 0;
-    translateX = 0;
-    sliderWidth = slider.offsetWidth;
-
-    if (document.documentElement.clientWidth > BREAKPOINT_FOR_3) {
-      slidesPerView = 3;
-    } else if (document.documentElement.clientWidth > BREAKPOINT_FOR_2) {
-      slidesPerView = 2;
-    } else {
-      slidesPerView = 1;
-    }
-
-    slideWidth = sliderWidth / slidesPerView;
-
-    slides.forEach((slide) => {
-      slide.style.setProperty('min-width', `${slideWidth}px`);
-    });
-
-    updateSlider();
-  }
-
-  function updateSlider() {
-    slides.forEach((slide, index) => {
-      if (index === currentSlide) {
-        slide.classList.add(activeSlidesClass);
-      } else {
-        slide.classList.remove(activeSlidesClass);
+  const counter = document.querySelector('.controls__counter_left');
+  createSlider('.players__slider', {
+    slidesPerView: 1,
+    breakpoints: [
+      {
+        width: 744,
+        slidesPerView: 2,
+      },
+      {
+        width: 1190,
+        slidesPerView: 3,
       }
-    });
-    sliderContent.style.setProperty('transform', `translateX(${translateX}px)`);
-    controlCounterLeft.textContent = `${currentSlide + 1}`;
-  }
-
-  function nextSlide() {
-    if (currentSlide < slideCount - 1) {
-      currentSlide++;
-      let rightVPIndex = (Math.abs(translateX) + sliderWidth) / slideWidth - 1;
-      if (currentSlide > rightVPIndex) {
-        translateX -= slideWidth;
-      }
-    } else {
-      currentSlide = 0;
-      translateX = 0;
+    ],
+    nextEl: '.players__button-next',
+    prevEl: '.players__button-prev',
+    autoplay: true,
+    autoplayDelay: 4000,
+    onSlideChanged: function (slideIndex) {
+      counter.textContent = `${slideIndex + 1}`;
     }
-    updateSlider();
-  }
-
-  function prevSlide() {
-    if (currentSlide > 0) {
-      currentSlide--;
-      let leftVPIndex = Math.abs(translateX) / slideWidth;
-      if (currentSlide < leftVPIndex) {
-        translateX += slideWidth;
-      }
-    } else {
-      currentSlide = slideCount - 1;
-      translateX = -slideWidth * (slideCount - slidesPerView);
-    }
-    updateSlider();
-  }
-
-  prevButton.addEventListener('click', prevSlide);
-
-  nextButton.addEventListener('click', nextSlide);
-
-  window.addEventListener('resize', function () {
-    initSlider();
   });
 
-  initSlider();
-
-  setInterval(() => {
-    nextSlide();
-  }, 4000);
-
+  const radioButtons = document.querySelectorAll('.controls__button_radio');
+  createSlider('.steps__slider', {
+    slidesPerView: 1,
+    enable: true,
+    breakpoints: [
+      {
+        enable: false,
+        width: 744,
+        slidesPerView: 2,
+      },
+      {
+        enable: false,
+        width: 1190,
+        slidesPerView: 3,
+      }
+    ],
+    nextEl: '.steps__button-next',
+    prevEl: '.steps__button-prev',
+    loop: true,
+    onSlideChanged: function (slideIndex) {
+      radioButtons.forEach((button, index) => {
+        if (index === slideIndex) {
+          button.setAttribute('aria-current', 'true');
+        } else {
+          button.removeAttribute('aria-current');
+        }
+      });
+    }
+  });
 });
