@@ -148,7 +148,7 @@
   }
 
   .card-list__item {
-    padding-top: 62px;
+    padding-top: 63px;
   }
 
   .card-list__item_last {
@@ -156,6 +156,6 @@
   }
 
   .card-list__item_double ~ .card-list__item_double {
-    padding-top: 8px;
+    padding-top: 11px;
   }
 }

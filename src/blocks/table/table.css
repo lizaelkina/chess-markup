@@ -5,7 +5,7 @@
 
 .table__row {
   display: grid;
-  grid-template-columns: 46% 54%;
+  grid-template-columns: minmax(250px, 306px) minmax(350px, 398px);
   align-items: center;
   font-family: var(--font-regular);
   font-style: normal;
@@ -54,6 +54,12 @@
   text-decoration-color: var(--accent-color);
 }
 
+@media (max-width: 1200px) {
+  .table__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 700px) {
   .table__row {
     display: flex;
@@ -79,6 +85,6 @@
   }
 
   .table__text {
-    padding: 0 0 16px 0;
+    padding: 0 0 14px 0;
   }
 }

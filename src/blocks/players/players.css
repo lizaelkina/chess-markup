@@ -4,7 +4,7 @@
   grid-template-areas:
     'title title controls'
     'list list list';
-  row-gap: 60px;
+  row-gap: 65px;
 }
 
 .players__title {
@@ -33,12 +33,12 @@
     'title'
     'list'
     'controls';
-    row-gap: 40px;
+    row-gap: 38px;
   }
 
   .players__title {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .players__controls {

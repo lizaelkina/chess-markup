@@ -37,4 +37,9 @@
   .page__container_type_header {
     margin-bottom: -68px;
   }
+
+  .page__container_type_overflow {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
