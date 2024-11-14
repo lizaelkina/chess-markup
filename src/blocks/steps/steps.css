@@ -80,6 +80,11 @@
     gap: 28px
   }
 
+  .steps__title {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .steps__controls {
     display: flex;
     align-self: center;

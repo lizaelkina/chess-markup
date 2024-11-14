@@ -26,6 +26,13 @@
   }
 }
 
+@media (max-width: 744px) {
+  .page__container_type_slider {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .page__container_type_header {
     margin-bottom: -68px;

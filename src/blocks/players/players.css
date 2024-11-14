@@ -36,6 +36,11 @@
     row-gap: 40px;
   }
 
+  .players__title {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .players__controls {
     justify-self: center;
   }

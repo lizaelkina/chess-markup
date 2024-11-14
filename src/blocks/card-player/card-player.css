@@ -1,7 +1,4 @@
 .card-player {
-  min-height: 462px;
-  padding-left: 37px;
-  padding-right: 37px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,18 +41,7 @@
   max-width: 113px;
 }
 
-@media (max-width: 1260px) {
-  .card-player {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card-player {
-    min-height: 388px;
-  }
-
+@media (max-width: 800px) {
   .card-player__image {
     max-width: 244px;
   }

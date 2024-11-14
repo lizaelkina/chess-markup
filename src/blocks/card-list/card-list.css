@@ -1,15 +1,48 @@
 .card-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: minmax(112px, 1fr);
   gap: 20px;
   counter-reset: card-list__item;
 }
 
-.card-list__item {
-  position: relative;
+.card-list__wrap {
+  display: flex;
+}
+
+.card-list__wrap_double {
   flex-basis: 50%;
-  padding: 20px 40px 20px 72px;
+  gap: 20px;
+}
+
+.card-list__wrap:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.card-list__wrap:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: span 2;
+}
+
+.card-list__wrap:nth-child(3) {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.card-list__wrap:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.card-list__wrap:nth-child(5) {
+  grid-column: span 2;
+  grid-row: 3;
+}
+
+.card-list__item {
+  flex-grow: 1;
+  padding: 20px 21px 20px 72px;
   background-image:
       image-set(url('../../images/background/background-image.webp') type('image/webp'),
                 url('../../images/background/background-image.jpg') type('image/jpg')),
@@ -21,67 +54,46 @@
   background-blend-mode: color-burn;
 }
 
-.card-list__wrap {
-  display: flex;
-  gap: 20px;
+.card-list__item_double {
+  flex-basis: 50%;
 }
 
-.card-list__wrap:nth-child(1) {
-  grid-column: 1 / 3;
-  grid-row: 1;
-}
-
-.card-list__item:nth-child(2) {
-  grid-column: 3 / 4;
-  grid-row: span 2;
-}
-
-.card-list__wrap:nth-child(3) {
-  grid-column: 1 / 3;
-  grid-row: 2;
-}
-
-.card-list__item:nth-child(4) {
-  grid-column: 1;
-  grid-row: 3;
-  background-color: var(--background-element);
-}
-
-.card-list__item:nth-child(5) {
-  grid-column: span 2;
-  grid-row: 3;
+.card-list__item_last {
   padding-right: 320px;
+}
+
+.card-list__item_accent {
   background-color: var(--background-element);
 }
 
-.card-list__item::before {
+.card-list__text {
+  position: relative;
+  font-family: var(--font-medium);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(18px, 1.5vw, 20px);
+  line-height: 120%;
+  color: var(--text-color);
+}
+
+.card-list__text::before {
   content: counter(card-list__item);
   counter-increment: card-list__item;
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: -52px;
   border-radius: 50%;
   background-color: var(--text-color-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-medium);
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(18px, 1.5vw, 20px);
-  line-height: 120%;
-  color: var(--text-color);
 }
 
-.card-list__text {
-  font-family: var(--font-medium);
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(18px, 1.5vw, 20px);
-  line-height: 120%;
-  color: var(--text-color);
+.card-list__wrap.slide {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @media (max-width: 1100px) {
@@ -94,7 +106,7 @@
     grid-column: span 2;
   }
 
-  .card-list__item:nth-child(2) {
+  .card-list__wrap:nth-child(2) {
     grid-column: span 2;
     grid-row: 2;
   }
@@ -104,12 +116,12 @@
     grid-row: 3;
   }
 
-  .card-list__item:nth-child(4) {
+  .card-list__wrap:nth-child(4) {
     grid-column: span 2;
     grid-row: 4;
   }
 
-  .card-list__item:nth-child(5) {
+  .card-list__wrap:nth-child(5) {
     grid-column: span 2;
     grid-row: 5;
   }
@@ -122,36 +134,28 @@
   }
 
   .card-list__wrap {
+    min-height: 300px;
+  }
+
+  .card-list__wrap_double {
     flex-direction: column;
     gap: 0;
   }
 
+  .card-list__wrap.slide {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
   .card-list__item {
-    min-width: calc(100vw - 40px);
-    min-height: 150px;
-    padding: 62px 24px 0 72px;
+    padding-top: 62px;
   }
 
-  .card-list__item::before {
-    top: 62px;
+  .card-list__item_last {
+    padding-right: 21px;
   }
 
-  .card-list__wrap .card-list__item:nth-child(2) {
-    padding-top: 28px;
-    min-height: 150px;
-  }
-
-  .card-list__wrap .card-list__item:nth-child(2)::before {
-    top: 28px;
-  }
-
-  .card-list__item:nth-child(2),
-  .card-list__item:nth-child(4),
-  .card-list__item:nth-child(5) {
-    min-height: 300px;
-  }
-
-  .card-list__item:nth-child(5) {
-    padding-right: 24px;
+  .card-list__item_double ~ .card-list__item_double {
+    padding-top: 8px;
   }
 }
