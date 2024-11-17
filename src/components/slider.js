@@ -8,7 +8,7 @@ export function createSlider(sliderEl, settings) {
   const activeSlidesClass = 'slide__active';
 
   const slideCount = slides.length;
-  let enable = true, slidesPerView, currentSlide, sliderWidth, slideWidth, translateX;
+  let enable = true, slidesPerView, currentSlide, slidesInViewport, sliderWidth, slideWidth;
 
   function initSlider() {
     if (typeof settings.enable === 'boolean') {
@@ -37,7 +37,10 @@ export function createSlider(sliderEl, settings) {
     }
 
     currentSlide = 0;
-    translateX = 0;
+    slidesInViewport = [];
+    for (let i = 0; i < slidesPerView; i++) {
+      slidesInViewport.push(currentSlide + i);
+    }
     sliderWidth = slider.offsetWidth;
     slideWidth = sliderWidth / slidesPerView;
 
@@ -49,7 +52,7 @@ export function createSlider(sliderEl, settings) {
   }
 
   function updateSlider() {
-    if (settings.loop) {
+    if (!settings.loop) {
       prevButton.setAttribute('aria-disabled', currentSlide === 0);
       nextButton.setAttribute('aria-disabled', currentSlide === slideCount - 1);
     }
@@ -60,36 +63,48 @@ export function createSlider(sliderEl, settings) {
         slide.classList.remove(activeSlidesClass);
       }
     });
+
+    const translateX = -slideWidth * slidesInViewport[0];
     sliderContent.style.setProperty('transform', `translateX(${translateX}px)`);
     settings.onSlideChanged(currentSlide);
   }
 
-  function nextSlide() {
-    if (currentSlide < slideCount - 1) {
-      currentSlide++;
-      let rightVPIndex = (Math.abs(translateX) + sliderWidth) / slideWidth - 1;
-      if (currentSlide > rightVPIndex) {
-        translateX -= slideWidth;
+  function goToSlide(slide) {
+    if (slide < 0 || slide >= slideCount) return;
+
+    currentSlide = slide;
+    if (!slidesInViewport.includes(currentSlide)) {
+      if (currentSlide === slidesInViewport[slidesInViewport.length - 1] + 1) {
+        slidesInViewport.push(currentSlide);
+        slidesInViewport.shift();
+      } else if (currentSlide === slidesInViewport[0] - 1) {
+        slidesInViewport.unshift(currentSlide);
+        slidesInViewport.pop();
+      } else {
+        slidesInViewport = [];
+        const firstSlideInViewport = Math.min(currentSlide, slideCount - slidesPerView);
+        for (let i = 0; i < slidesPerView; i++) {
+          slidesInViewport.push(firstSlideInViewport + i);
+        }
       }
-    } else {
-      currentSlide = 0;
-      translateX = 0;
     }
     updateSlider();
   }
 
+  function nextSlide() {
+    if (currentSlide < slideCount - 1) {
+      goToSlide(currentSlide + 1);
+    } else if (settings.loop) {
+      goToSlide(0);
+    }
+  }
+
   function prevSlide() {
     if (currentSlide > 0) {
-      currentSlide--;
-      let leftVPIndex = Math.abs(translateX) / slideWidth;
-      if (currentSlide < leftVPIndex) {
-        translateX += slideWidth;
-      }
-    } else {
-      currentSlide = slideCount - 1;
-      translateX = -slideWidth * (slideCount - slidesPerView);
+      goToSlide(currentSlide - 1);
+    } else if (settings.loop) {
+      goToSlide(slideCount - 1);
     }
-    updateSlider();
   }
 
   prevButton.addEventListener('click', prevSlide);
@@ -107,4 +122,8 @@ export function createSlider(sliderEl, settings) {
       nextSlide();
     }, settings.autoplayDelay);
   }
+
+  slider.goToSlide = goToSlide;
+
+  return slider;
 }

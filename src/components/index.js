@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
     prevEl: '.players__button-prev',
     autoplay: true,
     autoplayDelay: 4000,
+    loop: true,
     onSlideChanged: function (slideIndex) {
       counter.textContent = `${slideIndex + 1}`;
     }
   });
 
   const radioButtons = document.querySelectorAll('.controls__button_radio');
-  createSlider('.steps__slider', {
+  const stepsSlider = createSlider('.steps__slider', {
     slidesPerView: 1,
     enable: true,
     breakpoints: [
@@ -43,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     nextEl: '.steps__button-next',
     prevEl: '.steps__button-prev',
-    loop: true,
     onSlideChanged: function (slideIndex) {
       radioButtons.forEach((button, index) => {
         if (index === slideIndex) {
@@ -54,4 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+
+  radioButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      stepsSlider.goToSlide(index);
+    })
+  })
 });
