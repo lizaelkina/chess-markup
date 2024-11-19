@@ -84,8 +84,9 @@
         url('../../images/main/banner-mobile.png') type('image/png')),
         image-set(url('../../images/background/background-image-mobile.webp') type('image/webp'),
         url('../../images/background/background-image-mobile.jpg') type('image/jpg'));
-    background-size: contain;
-    background-position: bottom, bottom center;
+    background-size: contain, contain, cover;
+    background-repeat: no-repeat;
+    background-position: bottom, bottom, center;
   }
 
   .main__content {

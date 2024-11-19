@@ -55,6 +55,7 @@
 .support__poster {
   max-width: 521px;
   aspect-ratio: 521 / 568;
+  object-fit: contain;
 }
 
 .support__table {
