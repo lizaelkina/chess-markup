@@ -30,23 +30,28 @@ export function createSlider(sliderEl, settings) {
     }
 
     if (!enable) {
+      sliderContent.style.removeProperty('transform');
       slides.forEach((slide) => {
         slide.style.removeProperty('min-width');
       });
       return;
     }
 
-    currentSlide = 0;
-    slidesInViewport = [];
-    for (let i = 0; i < slidesPerView; i++) {
-      slidesInViewport.push(currentSlide + i);
-    }
     sliderWidth = slider.offsetWidth;
     slideWidth = sliderWidth / slidesPerView;
 
     slides.forEach((slide) => {
       slide.style.setProperty('min-width', `${slideWidth}px`);
     });
+
+    currentSlide = currentSlide === undefined ? 0 : currentSlide;
+    if (slidesInViewport === undefined || slidesPerView !== slidesInViewport.length || !slidesInViewport.includes(currentSlide)) {
+      slidesInViewport = [];
+      const firstSlideInViewport = Math.min(currentSlide, slideCount - slidesPerView);
+      for (let i = 0; i < slidesPerView; i++) {
+        slidesInViewport.push(firstSlideInViewport + i);
+      }
+    }
 
     updateSlider();
   }
