@@ -146,6 +146,7 @@
 
   .support__picture {
     margin-left: 0;
+    align-self: center;
   }
 
   .support__table {
