@@ -19,6 +19,7 @@
 }
 
 .players__controls {
+  margin-top: 7px;
   grid-area: controls;
   justify-self: end;
 }
@@ -33,7 +34,7 @@
     'title'
     'list'
     'controls';
-    row-gap: 38px;
+    row-gap: 40px;
   }
 
   .players__title {
@@ -42,6 +43,7 @@
   }
 
   .players__controls {
+    margin-top: 0;
     justify-self: center;
   }
 }

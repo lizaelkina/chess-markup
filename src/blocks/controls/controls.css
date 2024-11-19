@@ -88,4 +88,12 @@
     height: 36px;
     background-size: 7px 14px;
   }
+
+  .controls__counter_left {
+    padding-left: 6px;
+  }
+
+  .controls__counter_right {
+    padding-right: 6px;
+  }
 }
