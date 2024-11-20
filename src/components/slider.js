@@ -5,7 +5,7 @@ export function createSlider(sliderEl, settings) {
   const slides = slider.querySelectorAll('.slide');
   const prevButton = document.querySelector(settings.prevEl);
   const nextButton = document.querySelector(settings.nextEl);
-  const activeSlidesClass = 'slide__active';
+  const activeSlidesClass = 'slide_active';
 
   const slideCount = slides.length;
   let enable = true, slidesPerView, currentSlide, slidesInViewport, sliderWidth, slideWidth;
